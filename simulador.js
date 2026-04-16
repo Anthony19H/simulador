@@ -19,12 +19,18 @@ function calcular(){
     let tasa=parseInt(document.getElementById("txtTasaInteres").value);
 
     let interesSimple=CalcularInteresSimple(monto,plazoAnios,tasa);
+    let interesSimpleFormateado=interesSimple.toFixed(2);
 
     mostrarEnSpan("spnInteresPagar",interesSimple);
 
     let totalPagar=calcularTotalPagar(monto,interesSimple);
 
     mostrarEnSpan("spnTotalPrestamo",totalPagar);
+
+    let cuotaMensual=calcularCuotaMesual(totalPagar,plazoAnios);
+    let cuotaMensualFormateado=cuotaMensual.toFixed(2);
+
+    mostrarEnSpan("spnCuotaMensual",cuotaMensualFormateado);
 
 }
 
