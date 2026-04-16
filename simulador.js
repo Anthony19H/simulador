@@ -22,5 +22,9 @@ function calcular(){
 
     mostrarEnSpan("spnInteresPagar",interesSimple);
 
+    let totalPagar=calcularTotalPagar(monto,interesSimple);
+
+    mostrarEnSpan("spnTotalPrestamo",totalPagar);
+
 }
 
