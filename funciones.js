@@ -18,3 +18,9 @@ function mostrarEnSpan(idSpan,valor){
     let componente=document.getElementById(idSpan);
     componente.textContent=valor;
 }
+
+function CalcularInteresSimple(monto,tasa,plazoAnios){
+    let interes = plazoAnios*monto*(tasa/100);
+    return interes;
+
+}
