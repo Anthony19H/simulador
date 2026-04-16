@@ -21,16 +21,18 @@ function calcular(){
     let interesSimple=CalcularInteresSimple(monto,plazoAnios,tasa);
     let interesSimpleFormateado=interesSimple.toFixed(2);
 
-    mostrarEnSpan("spnInteresPagar",interesSimple);
-
+    mostrarEnSpan("spnInteresPagar",interesSimpleFormateado);
+    //total a pagar
     let totalPagar=calcularTotalPagar(monto,interesSimple);
 
     mostrarEnSpan("spnTotalPrestamo",totalPagar);
-
+    //Cuota mensual
     let cuotaMensual=calcularCuotaMesual(totalPagar,plazoAnios);
     let cuotaMensualFormateado=cuotaMensual.toFixed(2);
 
     mostrarEnSpan("spnCuotaMensual",cuotaMensualFormateado);
 
+    let analizarCredito=aprobarCredito(capacidadPago,cuotaMensualFormateado);
+    mostrarEnSpan("spnEstadoCredito",analizarCredito);
 }
 
