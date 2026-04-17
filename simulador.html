@@ -3,40 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Crédito</title>
+    <title>Finanzas Andinas - Simulador</title>
     <link rel="stylesheet" href="simulador.css">
     <script src="funciones.js"></script>
     <script src="simulador.js"></script>
+    <style>
+        /* Estilos adicionales para el branding del encabezado */
+        .header-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+            padding-top: 20px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            fill: #1a365d; /* Color primario del CSS */
+        }
+
+        .brand-name {
+            font-family: 'Segoe UI', sans-serif;
+            text-align: left;
+            line-height: 1;
+        }
+
+        .brand-name h2 {
+            margin: 0;
+            padding: 0;
+            border: none;
+            color: #1a365d;
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .brand-name p {
+            margin: 0;
+            padding: 0;
+            border: none;
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
 </head>
 <body>
+
+    <div class="header-logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 17.66l6-10.66 4 7 4-11 4 14.66h-18zm11-1.66l-2-3.5-3 5.33h10l-2-7-3 5.17z"/>
+        </svg>
+        <div class="brand-name">
+            <h2>Finanzas</h2>
+            <p>Andinas</p>
+        </div>
+    </div>
     
     <div class="container">
         <h1>Simulador de Crédito</h1>
 
         <h2>Datos financieros</h2>
         <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos">
+        <input type="text" id="txtIngresos" placeholder="Ej: 2000">
 
         <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos">
+        <input type="text" id="txtEgresos" placeholder="Ej: 800">
 
-        <p>Disponible: <span id="spnDisponible"></span></p>
-        <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
+        <p>Disponible: <span id="spnDisponible">$0.00</span></p>
+        <p>Capacidad de pago mensual: <span id="spnCapacidadPago">$0.00</span></p>
 
         <h2>Solicitud de crédito</h2>
-        <label for="txtMonto">Monto:</label>
-        <input type="text" id="txtMonto">
+        <label for="txtMonto">Monto solicitado:</label>
+        <input type="text" id="txtMonto" placeholder="Ej: 5000">
 
-        <label for="txtPlazo">Plazo en años:</label>
-        <input type="text" id="txtPlazo">
+        <label for="txtPlazo">Plazo (años):</label>
+        <input type="text" id="txtPlazo" placeholder="Ej: 3">
 
-        <label for="txtTasaInteres">Tasa de interés:</label>
-        <input type="text" id="txtTasaInteres">
+        <label for="txtTasaInteres">Tasa de interés (%):</label>
+        <input type="text" id="txtTasaInteres" placeholder="Ej: 12">
 
-        <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
-        <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
-        <p>Cuota mensual: <span id="spnCuotaMensual"></span></p>
-        <p>Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span></p>
+        <p>Interés a pagar: <span id="spnInteresPagar">$0.00</span></p>
+        <p>Total préstamo: <span id="spnTotalPrestamo">$0.00</span></p>
+        <p>Cuota mensual: <span id="spnCuotaMensual">$0.00</span></p>
+        <p>Estado de crédito: <span id="spnEstadoCredito">ESPERANDO DATOS...</span></p>
 
         <div class="buttons">
             <button id="btnCalcularCredito" onclick="calcular()">Calcular Crédito</button>
