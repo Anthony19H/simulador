@@ -1,0 +1,13 @@
+
+prompt 1
+Actúa como un programador senior y dime qué reglas de validación debería tener mi simulador de banco para que sea profesional.
+pon límites al monto mínimo 500 y máximo 50,000 y que los años de plazo sean lógicos, entre 1 y 30 años.
+
+prompt 2
+Ayúdame a escribir el código en JavaScript para que, si alguien escribe letras en lugar de números o deja el cuadro vacío, el programa se de cuenta y no intente hacer los cálculos.
+
+prompt 3
+Haz que si hay un error, aparezca un mensaje en color rojo justo debajo de cada cuadrito de texto para que el usuario sepa qué hizo mal.
+
+prompt 4
+Haz que cuando presione el botón 'Reiniciar', se borren todos los números que escribí, se quiten los mensajes rojos de error y todos los resultados vuelvan a estar en $0.

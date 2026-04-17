@@ -1,17 +1,17 @@
 1 prompt
-actúa como diseñador grafico el cual mejora la parte visual  de un programa que parezca empresarial
+Actúa como diseñador grafico el cual mejora la parte visual  de un programa que parezca empresarial
 
 2 prompt
 Sin que cambiar nada de los ids del html o los archivos js.
 
 3 prompt
-listo ayudame creado un logo para un banco ficticio y agregando tambien al html un nombre.
+Listo ayudame creado un logo para un banco ficticio y agregando tambien al html un nombre.
 
 4 prompt
-agrega el logo a la apliacion junto con el nombre de "Finazas Andinas".
+Agrega el logo a la apliacion junto con el nombre de "Finazas Andinas".
 
 5 prompt
 Cambia el fondo con un color morado que parezca de banco.
 
 6 prompt
-sigue muy claro pon otro fondo un poco mas oscuro pero solo el fondo.
+Sigue muy claro pon otro fondo un poco mas oscuro pero solo el fondo.

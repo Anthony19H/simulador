@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finanzas Andinas - Simulador</title>
+    <title>Finanzas Andinas - Simulador de Crédito</title>
     <link rel="stylesheet" href="simulador.css">
     <script src="funciones.js"></script>
     <script src="simulador.js"></script>
     <style>
-        /* Estilos adicionales para el branding del encabezado */
+        /* Estilos integrados para el branding del encabezado */
         .header-logo {
             display: flex;
             align-items: center;
@@ -21,7 +21,7 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            fill: #1a365d; /* Color primario del CSS */
+            fill: #2e1a47; /* Morado corporativo profundo */
         }
 
         .brand-name {
@@ -34,7 +34,7 @@
             margin: 0;
             padding: 0;
             border: none;
-            color: #1a365d;
+            color: #2e1a47;
             font-size: 22px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -48,6 +48,16 @@
             color: #718096;
             text-transform: uppercase;
             letter-spacing: 2px;
+        }
+
+        /* Clase para los mensajes de validación */
+        .error-msg {
+            color: #d32f2f;
+            font-size: 12px;
+            font-weight: bold;
+            display: block;
+            margin-top: 5px;
+            min-height: 15px;
         }
     </style>
 </head>
@@ -67,33 +77,44 @@
         <h1>Simulador de Crédito</h1>
 
         <h2>Datos financieros</h2>
-        <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos" placeholder="Ej: 2000">
+        
+        <label for="txtIngresos">Ingresos mensuales:</label>
+        <input type="text" id="txtIngresos" placeholder="Ej: 2500">
+        <span id="errIngresos" class="error-msg"></span>
 
-        <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos" placeholder="Ej: 800">
+        <label for="txtEgresos">Egresos mensuales:</label>
+        <input type="text" id="txtEgresos" placeholder="Ej: 1200">
+        <span id="errEgresos" class="error-msg"></span>
 
         <p>Disponible: <span id="spnDisponible">$0.00</span></p>
         <p>Capacidad de pago mensual: <span id="spnCapacidadPago">$0.00</span></p>
 
         <h2>Solicitud de crédito</h2>
+        
         <label for="txtMonto">Monto solicitado:</label>
-        <input type="text" id="txtMonto" placeholder="Ej: 5000">
+        <input type="text" id="txtMonto" placeholder="Mín: 500 - Máx: 50000">
+        <span id="errMonto" class="error-msg"></span>
 
         <label for="txtPlazo">Plazo (años):</label>
-        <input type="text" id="txtPlazo" placeholder="Ej: 3">
+        <input type="text" id="txtPlazo" placeholder="De 1 a 30 años">
+        <span id="errPlazo" class="error-msg"></span>
 
-        <label for="txtTasaInteres">Tasa de interés (%):</label>
+        <label for="txtTasaInteres">Tasa de interés anual (%):</label>
         <input type="text" id="txtTasaInteres" placeholder="Ej: 12">
+        <span id="errTasaInteres" class="error-msg"></span>
 
-        <p>Interés a pagar: <span id="spnInteresPagar">$0.00</span></p>
-        <p>Total préstamo: <span id="spnTotalPrestamo">$0.00</span></p>
-        <p>Cuota mensual: <span id="spnCuotaMensual">$0.00</span></p>
-        <p>Estado de crédito: <span id="spnEstadoCredito">ESPERANDO DATOS...</span></p>
+        <p>Interés total a pagar: <span id="spnInteresPagar">$0.00</span></p>
+        <p>Total del préstamo: <span id="spnTotalPrestamo">$0.00</span></p>
+        <p>Cuota mensual estimada: <span id="spnCuotaMensual">$0.00</span></p>
+        
+        <div style="margin-top: 20px; text-align: center;">
+            <p style="justify-content: center; border: none; font-weight: bold;">Estado del crédito:</p>
+            <span id="spnEstadoCredito" style="display: inline-block; margin-top: 5px;">ESPERANDO DATOS...</span>
+        </div>
 
         <div class="buttons">
             <button id="btnCalcularCredito" onclick="calcular()">Calcular Crédito</button>
-            <button id="btnReiniciar">Reiniciar</button>
+            <button id="btnReiniciar" onclick="reiniciar()">Reiniciar</button>
         </div>
     </div>
 
