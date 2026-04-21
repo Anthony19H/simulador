@@ -79,3 +79,29 @@ function calcular() {
     let analizarCredito = aprobarCredito(capacidadPago, cuotaMensual);
     mostrarEnSpan("spnEstadoCredito", analizarCredito);
 }
+
+function reiniciar() {
+    // 1. Limpiar todos los cuadros de texto (incluyendo los nuevos campos)
+    document.getElementById("txtIngresos").value = "";
+    document.getElementById("txtArriendo").value = "";     // Nuevo campo
+    document.getElementById("txtAlimentacion").value = ""; // Nuevo campo
+    document.getElementById("txtVarios").value = "";       // Nuevo campo
+    document.getElementById("txtMonto").value = "";
+    document.getElementById("txtPlazo").value = "";
+    document.getElementById("txtTasaInteres").value = "";
+
+    // 2. Borrar todos los mensajes de error (los textos en rojo)
+    const errores = document.querySelectorAll('.error-msg');
+    errores.forEach(err => err.textContent = "");
+
+    // 3. Resetear todos los resultados visuales a cero
+    document.getElementById("spnTotalGastos").textContent = "$0.00"; // Nuevo campo
+    document.getElementById("spnDisponible").textContent = "$0.00";
+    document.getElementById("spnCapacidadPago").textContent = "$0.00";
+    document.getElementById("spnInteresPagar").textContent = "$0.00";
+    document.getElementById("spnTotalPrestamo").textContent = "$0.00";
+    document.getElementById("spnCuotaMensual").textContent = "$0.00";
+    
+    // 4. Regresar el estado del crédito al texto inicial
+    document.getElementById("spnEstadoCredito").textContent = "ESPERANDO DATOS...";
+}
